@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, sans-serif;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .title {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>  <img src="https://i.pinimg.com/736x/0a/bc/ed/0abced5b6924dd12995acc665c64cf32.jpg" height="800"/> </div>
-    <div><span style="font-family: Verdana"><b>Gitara</b></span></div>
-  
+    
+    <img src="https://i.pinimg.com/736x/0a/bc/ed/0abced5b6924dd12995acc665c64cf32.jpg" alt="Gitara">
+
+    <div class="title">Gitara</div>
+
 </body>
 </html>
