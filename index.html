@@ -17,7 +17,6 @@
             background-size: cover;
         }
 
-        /* półprzezroczysta warstwa na tekst */
         .overlay {
             background: rgba(255,255,255,0.85);
             min-height: 100vh;
@@ -75,17 +74,76 @@
             font-weight: 600;
         }
 
+        /* ==== NOWY STYL DLA ROZWIJANEJ SEKCJI ==== */
+        .accordion-header {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #004a8f;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: #003b73;
+        }
+
+        .accordion-header::after {
+            content: "▼";
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: url('wsparcie.jpg') center/cover no-repeat;
+            color: white;
+            padding: 0 20px;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+        }
+
+        .accordion-content-inner {
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.55); /* lekkie przyciemnienie, żeby tekst był czytelny */
+            border-radius: 8px;
+            backdrop-filter: blur(2px);
+        }
+
+        .accordion-content.active {
+            max-height: 1200px; /* wystarczająco dużo, żeby zmieściło się wszystko */
+        }
+
+        .accordion-content ol {
+            padding-left: 20px;
+        }
+
+        .accordion-content li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .accordion-content strong {
+            color: #ffb400;
+        }
+
         @media (max-width: 700px) {
-            header img {
-                width: 140px;
-            }
-            header h1 {
-                font-size: 24px;
-            }
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
+            header img { width: 140px; }
+            header h1 { font-size: 24px; }
+            .container { margin: 20px; padding: 20px; }
+            .accordion-content-inner { padding: 20px 15px; }
         }
     </style>
 </head>
@@ -106,14 +164,50 @@
         niezbędnego wsparcia dopasowanego do indywidualnych potrzeb.
     </p>
 
-    <h2>Zakres Wsparcia</h2>
-    <ul>
-        <li>wsparcie psychologiczne</li>
-        <li>psychoterapeutyczne</li>
-        <li>zawodowe</li>
-        <li>wsparcie trenera personalnego</li>
-        <li>poradnictwo prawne</li>
-    </ul>
+    <!-- ROZWIJANY ZAKRES WSPARCIA -->
+    <div class="accordion-header">Zakres Wsparcia <span></span></div>
+    <div class="accordion-content">
+        <div class="accordion-content-inner">
+            <ol>
+                <li><strong>Wsparcie psychologiczne</strong><br>
+                    • indywidualne wsparcie psychologiczne<br>
+                    • konsultacje psychologiczne<br>
+                    • porady psychologiczne
+                </li>
+                <li><strong>Psychoterapia</strong><br>
+                    • wsparcie psychoterapeutyczne<br>
+                    • pomoc w sytuacjach trudnych emocjonalnie<br>
+                    • pomoc w kryzysach życiowych i traumatycznych
+                </li>
+                <li><strong>Wsparcie zawodowe</strong><br>
+                    • wsparcie doradcy zawodowego<br>
+                    • analiza sytuacji zawodowej<br>
+                    • wspólne szukanie rozwiązań problemów zawodowych<br>
+                    • wskazywanie odpowiednich sposobów działania
+                </li>
+                <li><strong>Coaching / rozwój osobisty</strong><br>
+                    • wsparcie trenera personalnego<br>
+                    • budowanie motywacji do zmian<br>
+                    • analiza barier i trudności życiowych<br>
+                    • praca nad podjęciem aktywności zawodowej
+                </li>
+                <li><strong>Poradnictwo prawne</strong><br>
+                    • konsultacje prawne<br>
+                    • porady prawne dotyczące trudnej sytuacji życiowej lub zawodowej
+                </li>
+                <li><strong>Wsparcie kryzysowe</strong><br>
+                    • pomoc w sytuacjach kryzysowych<br>
+                    • wsparcie w sytuacjach traumatycznych<br>
+                    • wskazywanie specjalistycznych form pomocy
+                </li>
+                <li><strong>Konsultacje indywidualne w prywatnych gabinetach ekspertów</strong><br>
+                    • konsultacje z ekspertami posiadającymi min. 3-letnie doświadczenie<br>
+                    • zajęcia dostosowane do indywidualnych potrzeb uczestnika
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- KONIEC ROZWIJANEJ SEKCJI -->
 
     <h2>Termin Realizacji</h2>
     <p class="highlight"><b>03.2025 – 03.2026</b></p>
@@ -142,6 +236,15 @@
 </footer>
 
 </div>
+
+<!-- Skrypt do rozwijania/zamykania -->
+<script>
+    document.querySelector('.accordion-header').addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>
