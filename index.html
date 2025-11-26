@@ -3,44 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona</title>
+    <title>Aga Mat Szkolenia</title>
+         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
             background-color: rgb(236, 236, 236);
         }
 
-        img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-              box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-top: 10px;
         }
 
-        .title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            margin-bottom: 10px;
+        }
+
+        .title-box {
+            font-size: 6px;
+            padding: 15px;
+            font-weight: 600;
+            color:rgb(0, 28, 70);
+            background: white;
+            border: 0px solid #000000;
+            border-radius: 7px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
         }
 
         @media (min-width: 768px) {
-            .title {
-                font-size: 36px;
+            .title-box {
+                font-size: 30px;
+                padding: 10px;
+            }
+
+            img {
+                box-shadow: 0 12px 28px rgba(0,0,0,0.3);
             }
         }
     </style>
 </head>
 <body>
-    
-    <img src="pobrane.jpg" alt="Gitara">
 
-    <div class="title">Gitara</div>
+    <div class="container">
+        <img src="pobrane.jpg" alt="Gitara">
+
+        <div class="title-box">Gitara</div>
+    </div>
 
 </body>
 </html>
