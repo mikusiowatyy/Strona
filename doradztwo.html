@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doradztwo zawodowe – Starachowice | AGAMAT</title>
+<meta name="description" content="Profesjonalne doradztwo zawodowe i wsparcie w znalezieniu pracy w Starachowicach. CV, przyszła kariera, szkolenia.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body {margin:0;font-family:'Inter',sans-serif;background:#f6f7f9;color:#1b1b1b;overflow-x:hidden;}
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeInUp .9s forwards;}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
+
+header{background:white;padding:20px 25px;box-shadow:0 4px 18px rgba(0,0,0,0.07);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+header img{height:55px;border-radius:10px;}
+nav{display:flex;gap:25px;}
+nav a{font-weight:600;font-size:1.05rem;text-decoration:none;color:#003b73;transition:.3s;}
+nav a:hover{color:#ffb400;}
+.menu-btn{display:none;}
+
+@media(max-width:780px){
+    nav{display:none;flex-direction:column;background:white;position:absolute;top:80px;right:20px;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+    nav.active{display:flex;}
+    .menu-btn{display:block;font-size:28px;color:#003b73;cursor:pointer;}
+}
+
+.hero{
+    background:url('koncowka.jpg') center/cover no-repeat;
+    height:360px;display:flex;align-items:center;text-align:center;color:white;padding:20px;position:relative;
+}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.7));}
+.hero-content{position:relative;z-index:2;}
+.hero h1{font-size:2.5rem;margin-bottom:10px;font-weight:700;}
+.hero p{font-size:1.2rem;}
+
+.section{padding:60px 20px;max-width:1100px;margin:auto;}
+.section h2{text-align:center;color:#003b73;font-size:2rem;margin-bottom:30px;}
+.textbox{
+    background:white;padding:35px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    font-size:1.1rem;line-height:1.65;
+}
+footer{background:#003b73;color:white;padding:40px;text-align:center;margin-top:70px;}
+
+    @media (min-width: 900px) {
+    .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+}
+.hero {
+    background-size: cover;
+}
+
+
+@media (min-width: 900px) {
+    .hero {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #ffffff;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="pobrane.jpg" alt="AGAMAT Logo">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+        <a href="index.html">Strona główna</a>
+        <a href="psycholog.html">Psycholog</a>
+        <a href="prawnik.html">Prawnik</a>
+        <a href="doradztwo.html">Doradztwo</a>
+       
+    </nav>
+</header>
+
+<section class="hero fade-in">
+    <div class="hero-content">
+        <h1>Doradztwo zawodowe</h1>
+        <p>Wsparcie w znalezieniu pracy, wyborze kierunku kariery i przygotowaniu dokumentów.</p>
+    </div>
+</section>
+
+<section class="section fade-in">
+    <h2>Jak pomagamy?</h2>
+    <div class="textbox">
+        <p><strong>Oferujemy profesjonalne doradztwo zawodowe:</strong></p>
+        <ul>
+            <li>analiza predyspozycji i kompetencji</li>
+            <li>pomoc w wyborze ścieżki zawodowej</li>
+            <li>tworzenie CV i listów motywacyjnych</li>
+            <li>przygotowanie do rozmów kwalifikacyjnych</li>
+            <li>informacje o lokalnym rynku pracy</li>
+        </ul>
+
+        <p>Wspieramy osoby młode, dorosłych i osoby chcące się przebranżowić.</p>
+
+        <p><strong>Telefon:</strong> 606 908 060</p>
+    </div>
+</section>
+
+<footer>
+    AGAMAT – Pomoc psychologiczna, prawna i zawodowa • Starachowice
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
